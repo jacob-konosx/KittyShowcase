@@ -1,59 +1,129 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import img1 from '../lib/images/cats/cukurins/1.jpg';
+	import img2 from '../lib/images/cats/cukurins/2.jpg';
+	import img3 from '../lib/images/cats/cukurins/3.jpg';
+	import img4 from '../lib/images/cats/cukurins/4.jpg';
+	import img5 from '../lib/images/cats/cukurins/5.jpg';
+	import img6 from '../lib/images/cats/cukurins/6.jpg';
+	import img7 from '../lib/images/cats/cukurins/7.jpg';
+	import img8 from '../lib/images/cats/cukurins/8.jpg';
+	import img9 from '../lib/images/cats/cukurins/9.jpg';
+	import img10 from '../lib/images/cats/cukurins/10.jpg';
+	import img11 from '../lib/images/cats/cukurins/11.jpg';
+	import img12 from '../lib/images/cats/cukurins/12.jpg';
+
+	import { onMount } from "svelte";
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import 'photoswipe/style.css';
+
+	const galleryID = 'cukurins-gallery';
+
+	onMount(() => {
+		let lightbox = new PhotoSwipeLightbox({
+			gallery: '#' + galleryID,
+			children: 'a',
+			showHideAnimationType: 'fade',
+			initialZoomLevel: 'fit',
+  			secondaryZoomLevel: 'fit',
+			pswpModule: () => import('photoswipe'),
+		});
+		lightbox.init();
+	})
+
+	const images = [{scr: img1, alt: 'Cukuriņš stareee~'},
+	{scr: img2, alt: 'Battle mode Cukuriņš'},
+	{scr: img3, alt: 'The bite of Cukuriņš'},
+	{scr: img4, alt: 'Cukuriņš hunting rabbit'},
+	{scr: img5, alt: 'Cukuriņš Tucked-in'},
+	{scr: img6, alt: 'Sleepy Cukuriņš'},
+	{scr: img7, alt: 'Scared Cukuriņš'},
+	{scr: img8, alt: 'Cukuriņš in a bowl'},
+	{scr: img9, alt: 'Vampire Cukuriņš'},
+	{scr: img10, alt: 'Fighter Cukuriņš'},
+	{scr: img11, alt: 'Cukuriņš with a toy'},
+	{scr: img12, alt: 'Gamer Cukuriņš'},];
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Cukuriņš Showcase
+	</title>
+	<meta name="description" content='This website is a showcase of my cat named "Cukuriņš" as well as other adorable kitties.' />
 </svelte:head>
 
 <section>
 	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
+		Cukuriņš Showcase
 	</h1>
+<!-- data-pswp-width={image.width}
+          data-pswp-height={image.height} -->
+	<div class="gallery pswp-gallery" id={galleryID}>
+		{#each images as image}
+			<div class="gallery-div">
+				 <a
+				href={image.scr}
+				target="_blank"
+				rel="noreferrer"
+				data-pswp-width=4000
+          		data-pswp-height=3000
+				>
+					<img src={image.scr} alt={image.alt} />
+					<p>{image.alt}</p>
+				</a>
+					<!-- <CatImage scr={i.scr} alt={i.alt}/>
+					<p>{i.alt}</p> -->
+			</div>
+		{/each}
+	</div>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
 	h1 {
 		width: 100%;
 	}
-
-	.welcome {
-		display: block;
+	.gallery {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1rem;
 		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	}
+	.gallery img {
+		aspect-ratio: 4/3;
+		max-width: 100%;
+		object-fit: cover;
+		transition: transform .2s;
+
+		align-content: center;
+		object-position: center;
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.gallery img:hover{
+		transform:scale(1.1);
+		cursor: pointer;
 	}
+	.gallery-div {
+		position: relative;
+		max-width: 100%;
+	}
+	.gallery-div p {
+		position: relative;
+		text-align: center;
+		width: 100%;
+	}
+
+	.gallery-div a{
+		text-decoration: none;
+		color: black;
+	}
+	@media only screen and (max-width: 800px) {
+		.gallery {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			padding-left: 0rem;
+			padding-right: 0rem;
+		}
+	}
+
 </style>

@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	let year = new Date().getFullYear();
 </script>
 
 <div class="app">
@@ -11,7 +12,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+        <p class="copyright">&#x1F63C; Jēkabs Konošonoks &#x1F63C; © Cutie Patootie, Inc. All rights reserved. {year}</p>
 	</footer>
 </div>
 
