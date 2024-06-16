@@ -1,16 +1,16 @@
 <script>
-	import img1 from '../lib/images/cats/cukurins/1.jpg';
-	import img2 from '../lib/images/cats/cukurins/2.jpg';
-	import img3 from '../lib/images/cats/cukurins/3.jpg';
-	import img4 from '../lib/images/cats/cukurins/4.jpg';
-	import img5 from '../lib/images/cats/cukurins/5.jpg';
-	import img6 from '../lib/images/cats/cukurins/6.jpg';
-	import img7 from '../lib/images/cats/cukurins/7.jpg';
-	import img8 from '../lib/images/cats/cukurins/8.jpg';
-	import img9 from '../lib/images/cats/cukurins/9.jpg';
-	import img10 from '../lib/images/cats/cukurins/10.jpg';
-	import img11 from '../lib/images/cats/cukurins/11.jpg';
-	import img12 from '../lib/images/cats/cukurins/12.jpg';
+	import img1 from '$lib/images/cats/cuk/1.jpg';
+	import img2 from '$lib/images/cats/cuk/2.jpg';
+	import img3 from '$lib/images/cats/cuk/3.jpg';
+	import img4 from '$lib/images/cats/cuk/4.jpg';
+	import img5 from '$lib/images/cats/cuk/5.jpg';
+	import img6 from '$lib/images/cats/cuk/6.jpg';
+	import img7 from '$lib/images/cats/cuk/7.jpg';
+	import img8 from '$lib/images/cats/cuk/8.jpg';
+	import img9 from '$lib/images/cats/cuk/9.jpg';
+	import img10 from '$lib/images/cats/cuk/10.jpg';
+	import img11 from '$lib/images/cats/cuk/11.jpg';
+	import img12 from '$lib/images/cats/cuk/12.jpg';
 
 	import { onMount } from "svelte";
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
@@ -45,14 +45,14 @@
 </script>
 
 <svelte:head>
-	<title>Cukuriņš Showcase
+	<title>Cukuriņš
 	</title>
-	<meta name="description" content='This website is a showcase of my cat named "Cukuriņš" as well as other adorable kitties.' />
+	<meta name="description" content='This page is a showcase of my cat named "Cukuriņš".' />
 </svelte:head>
 
 <section>
 	<h1>
-		Cukuriņš Showcase
+		Cukuriņš
 	</h1>
 <!-- data-pswp-width={image.width}
           data-pswp-height={image.height} -->
