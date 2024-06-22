@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"photoswipe": "^5.4.3"
+		"photoswipe": "^5.4.3",
+		"vercel": "^34.2.7"
 	}
 }

@@ -1,22 +1,22 @@
 <script>
-	import img1 from '$lib/images/cats/cuku/1.jpg';
-	import img2 from '$lib/images/cats/cuku/2.jpg';
-	import img3 from '$lib/images/cats/cuku/3.jpg';
-	import img4 from '$lib/images/cats/cuku/4.jpg';
-	import img5 from '$lib/images/cats/cuku/5.jpg';
-	import img6 from '$lib/images/cats/cuku/6.jpg';
-	import img7 from '$lib/images/cats/cuku/7.jpg';
-	import img8 from '$lib/images/cats/cuku/8.jpg';
-	import img9 from '$lib/images/cats/cuku/9.jpg';
-	import img10 from '$lib/images/cats/cuku/10.jpg';
-	import img11 from '$lib/images/cats/cuku/11.jpg';
-	import img12 from '$lib/images/cats/cuku/12.jpg';
+	import img1 from '$lib/images/cats/dash/1.jpg';
+	import img2 from '$lib/images/cats/dash/2.jpg';
+	import img3 from '$lib/images/cats/dash/3.jpg';
+	import img4 from '$lib/images/cats/dash/4.jpg';
+	import img5 from '$lib/images/cats/dash/5.jpg';
+	import img6 from '$lib/images/cats/dash/6.jpg';
+	import img7 from '$lib/images/cats/dash/7.jpg';
+	import img8 from '$lib/images/cats/dash/8.jpg';
+	import img9 from '$lib/images/cats/dash/9.jpg';
+	import img10 from '$lib/images/cats/dash/10.jpg';
+	import img11 from '$lib/images/cats/dash/11.jpg';
+	import img12 from '$lib/images/cats/dash/12.jpg';
 
 	import { onMount } from "svelte";
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
 	import 'photoswipe/style.css';
 
-	const galleryID = 'cukurins-gallery';
+	const galleryID = 'dasha-gallery';
 
 	onMount(() => {
 		let lightbox = new PhotoSwipeLightbox({
@@ -24,35 +24,39 @@
 			children: 'a',
 			showHideAnimationType: 'fade',
 			initialZoomLevel: 'fit',
-  			secondaryZoomLevel: 'fit',
+			secondaryZoomLevel: 'fill',
 			pswpModule: () => import('photoswipe'),
 		});
 		lightbox.init();
 	})
 
-	const images = [{scr: img1, alt: 'Cukuriņš stareee~'},
-	{scr: img2, alt: 'Battle mode Cukuriņš'},
-	{scr: img3, alt: 'The bite of Cukuriņš'},
-	{scr: img4, alt: 'Cukuriņš hunting rabbit'},
-	{scr: img5, alt: 'Cukuriņš Tucked-in'},
-	{scr: img6, alt: 'Sleepy Cukuriņš'},
-	{scr: img7, alt: 'Scared Cukuriņš'},
-	{scr: img8, alt: 'Cukuriņš in a bowl'},
-	{scr: img9, alt: 'Vampire Cukuriņš'},
-	{scr: img10, alt: 'Fighter Cukuriņš'},
-	{scr: img11, alt: 'Cukuriņš with a toy'},
-	{scr: img12, alt: 'Gamer Cukuriņš'},];
+	const images = [
+	{scr: img1, alt: 'Just Dasha'},
+	{scr: img2, alt: 'The elagance of Dasha'},
+	{scr: img3, alt: 'Grumpy pet Dasha'},
+	{scr: img4, alt: 'Eepyy Dasha'},
+	{scr: img5, alt: 'Bff Dasha'},
+	{scr: img6, alt: 'Programmer Dasha (sleepy)'},
+	{scr: img7, alt: 'Dashas culinary genius'},
+	{scr: img8, alt: 'Dasha stareee~'},
+	{scr: img9, alt: 'Vampire dashriņš'},
+	{scr: img10, alt: 'Classic cat'},
+	{scr: img11, alt: 'OMG Dasha in a box!'},
+	{scr: img12, alt: 'Death stare Dasha'},];
+
+	const catName = 'Dasha';
 </script>
 
 <svelte:head>
-	<title>Cukuriņš
+	<title>
+		{catName}
 	</title>
-	<meta name="description" content='This page is a showcase of my cat named "Cukuriņš".' />
+	<meta name="description" content='This page is a showcase of the adorable cat named "{catName}".' />
 </svelte:head>
 
 <section>
 	<h1>
-		Cukuriņš
+		{catName}
 	</h1>
 <!-- data-pswp-width={image.width}
           data-pswp-height={image.height} -->
