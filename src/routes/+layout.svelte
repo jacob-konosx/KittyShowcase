@@ -40,6 +40,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
+		text-align: center;
 	}
 
 	@media (min-width: 480px) {

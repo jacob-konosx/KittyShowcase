@@ -45,21 +45,19 @@
 </script>
 
 <svelte:head>
-	<title>Cukuriņš
+	<title>Kitty Showcase
 	</title>
-	<meta name="description" content='This page is a showcase of my cat named "Cukuriņš".' />
+	<meta name="description" content='This website is a showcase of all of my favorite kitties!' />
 </svelte:head>
 
 <section>
 	<h1>
 		Cukuriņš
 	</h1>
-<!-- data-pswp-width={image.width}
-          data-pswp-height={image.height} -->
 	<div class="gallery pswp-gallery" id={galleryID}>
 		{#each images as image}
 			<div class="gallery-div">
-				 <a
+				<a
 				href={image.scr}
 				target="_blank"
 				rel="noreferrer"
@@ -69,8 +67,6 @@
 					<img src={image.scr} alt={image.alt} />
 					<p>{image.alt}</p>
 				</a>
-					<!-- <CatImage scr={i.scr} alt={i.alt}/>
-					<p>{i.alt}</p> -->
 			</div>
 		{/each}
 	</div>

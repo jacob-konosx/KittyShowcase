@@ -12,7 +12,7 @@
 	</p>
 
 	<p>
-		Im looking forward to sharing my videos with you all in the future too! (soon™️)
+		In the future I'm planning to showcase videos of my favorite kitties too! (soon™️)
 	</p>
 
 </div>
