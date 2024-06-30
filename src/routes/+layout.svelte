@@ -12,7 +12,7 @@
 	</main>
 
 	<footer>
-        <p class="copyright">&#x1F63C; Jēkabs Konošonoks &#x1F63C; © Cutie Patootie, Inc. All rights reserved. {year}</p>
+        <p>&#x1F63C; Jēkabs Konošonoks &#x1F63C; © Cutie Patootie, Inc. All rights reserved. {year}</p>
 	</footer>
 </div>
 
@@ -41,6 +41,7 @@
 		align-items: center;
 		padding: 12px;
 		text-align: center;
+		padding-bottom: 1rem;
 	}
 
 	@media (min-width: 480px) {
