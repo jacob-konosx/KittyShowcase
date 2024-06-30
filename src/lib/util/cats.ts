@@ -42,7 +42,7 @@ async function importCatImages(catName: string) {
 		const imagePath: string = `../images/cats/${catName}/${i}.jpg`;
 
 		// Dynamically import the image
-		const imageModule = await import(/* @vite-ignore */ imagePath);
+		const imageModule = await import(imagePath);
 		const imageSrc: string = imageModule.default;
 		if (imageSrc.includes('@fs')) {
 			return null;
