@@ -14,5 +14,5 @@ export async function load({ params: { slug } }) {
 		};
 	}
 
-	error(404, 'Cat Images Not found');
+	error(404, 'Cat images not found for cat: ' + slug);
 }
