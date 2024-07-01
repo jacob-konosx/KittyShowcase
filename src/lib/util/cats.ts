@@ -32,7 +32,7 @@ const catInfo = [
 			'Programmer Dasha (sleepy)',
 			'Dashas culinary genius',
 			'Dasha stareee~',
-			'Vampire dashriņš',
+			'Box stare dasha',
 			'Classic cat',
 			'OMG Dasha in a box!',
 			'Death stare Dasha'

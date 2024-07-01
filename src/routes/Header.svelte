@@ -33,7 +33,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/jacob-konosx/CukurinsShowcase">
+		<a href="https://github.com/jacob-konosx/KittyShowcase">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
