@@ -42,11 +42,11 @@ async function importCatImages(catName: string) {
 		const imagePath: string = `/images/cats/${catName}/${i}.jpg`;
 
 		// Dynamically import the image
-		const imageModule = await import(/* @vite-ignore */ imagePath);
-		const imageSrc: string = imageModule.default;
-		if (imageSrc.includes('@fs')) {
-			return null;
-		}
+		// const imageModule = await import(/* @vite-ignore */ imagePath);
+		// const imageSrc: string = imageModule.default;
+		// if (imageSrc.includes('@fs')) {
+		// 	return null;
+		// }
 
 		// Determine the cat index
 		const catIndex =
@@ -57,7 +57,7 @@ async function importCatImages(catName: string) {
 
 		// Create an object with the src and alt description
 		const imageObject: ImageObject = {
-			src: imageSrc,
+			src: imagePath,
 			alt: catAltText[catIndex][i - 1]
 		};
 
