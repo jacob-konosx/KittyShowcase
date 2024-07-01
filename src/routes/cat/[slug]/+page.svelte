@@ -6,10 +6,10 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	const slug = data.props.slug;
-	const catImages = data.props.catImages;
+	$: slug = data.props.slug;
+	$: catImages = data.props.catImages;
 
-	const slugCapitalized = slug.charAt(0).toUpperCase() + slug.slice(1);
+	$: slugCapitalized = slug.charAt(0).toUpperCase() + slug.slice(1);
 
     const galleryID = slug + '-gallery';
 
