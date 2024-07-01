@@ -1,12 +1,15 @@
 <script>
-    import { page } from '$app/stores';
-
     import { onMount } from "svelte";
     import PhotoSwipeLightbox from 'photoswipe/lightbox';
     import 'photoswipe/style.css';
 
-    $: catImages = $page.data.props.catImages;
-    $: slug = $page.data.props.slug;
+	/** @type {import('./$types').PageData} */
+	export let data;
+
+	const slug = data.props.slug;
+	const catImages = data.props.catImages;
+
+	const slugCapitalized = slug.charAt(0).toUpperCase() + slug.slice(1);
 
     const galleryID = slug + '-gallery';
 
@@ -25,9 +28,9 @@
 </script>
 
 <svelte:head>
-	<title>{slug.charAt(0).toUpperCase() + slug.slice(1)} Showcase
+	<title>{slugCapitalized} Showcase
 	</title>
-	<meta name="description" content='This website is a showcase of all of my favorite kitties!' />
+	<meta name="description" content={`This page is a showcase of the cuteness of ${slugCapitalized}!`} />
 </svelte:head>
 
 <section>
