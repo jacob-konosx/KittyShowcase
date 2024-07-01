@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
-	import favicon from '$lib/images/favicon.ico';
-	import github from '$lib/images/github.svg';
+	import favicon from '/images/favicon.ico';
+	import github from '/images/github.svg';
 </script>
 
 <header>

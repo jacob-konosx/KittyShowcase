@@ -39,19 +39,26 @@ async function importCatImages(catName: string) {
 
 	for (let i = 1; i <= 12; i++) {
 		// Dynamically construct the image path
-		const imagePath: string = `../images/cats/${catName}/${i}.jpg`;
+		const imagePath: string = `/images/cats/${catName}/${i}.jpg`;
 
 		// Dynamically import the image
-		const imageModule = await import(imagePath);
+		const imageModule = await import(/* @vite-ignore */ imagePath);
 		const imageSrc: string = imageModule.default;
 		if (imageSrc.includes('@fs')) {
 			return null;
 		}
 
+		// Determine the cat index
+		const catIndex =
+			catName === 'cukurins' ? 0 :
+			catName === 'dasha' ? 1 :
+			catName === 'buchs' ? 2 :
+			3;
+
 		// Create an object with the src and alt description
 		const imageObject: ImageObject = {
 			src: imageSrc,
-			alt: catAltText[catName === 'cukurins' ? 0 : 1][i - 1]
+			alt: catAltText[catIndex][i - 1]
 		};
 
 		catImages.push(imageObject);

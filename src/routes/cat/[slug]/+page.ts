@@ -2,17 +2,17 @@ import importCatImages from '$lib/util/cats.js';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
-    const catImages = await importCatImages(params.slug);
+export async function load({ params: { slug } }) {
+	const catImages = await importCatImages(slug);
 
-    if (catImages) {
-        return {
-            props: {
-                catImages,
-                slug: params.slug
-            },
-        };
-    }
+	if (catImages) {
+		return {
+			props: {
+				catImages,
+				slug
+			}
+		};
+	}
 
 	error(404, 'Cat Images Not found');
 }
