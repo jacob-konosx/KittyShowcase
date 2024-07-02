@@ -1,8 +1,8 @@
 import importCatImages from '$lib/util/cats.js';
 import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
-/** @type {import('./$types').PageLoad} */
-export async function load({ params: { slug } }) {
+export const load: PageServerLoad = async({ params: { slug } }) => {
 	const catImages = await importCatImages(slug);
 
 	if (catImages) {

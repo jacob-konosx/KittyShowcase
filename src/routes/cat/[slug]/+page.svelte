@@ -1,29 +1,27 @@
-<script>
+<script lang="ts">
     import { onMount } from "svelte";
-    import PhotoSwipeLightbox from 'photoswipe/lightbox';
-    import 'photoswipe/style.css';
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import 'photoswipe/style.css';
+	import type { PageData } from "./$types";
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: PageData;
 
 	$: slug = data.props.slug;
 	$: catImages = data.props.catImages;
-
 	$: slugCapitalized = slug.charAt(0).toUpperCase() + slug.slice(1);
-
-    const galleryID = slug + '-gallery';
+    $: galleryID = slug + '-gallery';
 
     onMount(() => {
-            let lightbox = new PhotoSwipeLightbox({
-                gallery: '#' + galleryID,
-                children: 'a',
-                showHideAnimationType: 'fade',
-                initialZoomLevel: 'fit',
-                secondaryZoomLevel: 'fit',
-                pswpModule: () => import('photoswipe'),
-            });
-            lightbox.init();
-        })
+		let lightbox = new PhotoSwipeLightbox({
+			gallery: '#' + galleryID,
+			children: 'a',
+			showHideAnimationType: 'fade',
+			initialZoomLevel: 'fit',
+  			secondaryZoomLevel: 'fit',
+			pswpModule: () => import('photoswipe'),
+		});
+		lightbox.init();
+	})
 
 </script>
 
@@ -35,7 +33,7 @@
 
 <section>
 	<h1>
-		{slug}
+		{slugCapitalized}
 	</h1>
 	<div class="gallery pswp-gallery" id={galleryID}>
 		{#each catImages as image}
@@ -57,13 +55,6 @@
 </section>
 
 <style>
-	h1 {
-		width: 100%;
-	}
-
-    h1::first-letter {
-        text-transform: capitalize
-    }
 	.gallery {
 		padding-left: 1rem;
 		padding-right: 1rem;
@@ -73,12 +64,12 @@
 		gap: 1rem;
 		position: relative;
 	}
+
 	.gallery img {
 		aspect-ratio: 4/3;
 		max-width: 100%;
 		object-fit: cover;
 		transition: transform .2s;
-
 		align-content: center;
 		object-position: center;
 	}
@@ -87,10 +78,12 @@
 		transform:scale(1.1);
 		cursor: pointer;
 	}
+
 	.gallery-div {
 		position: relative;
 		max-width: 100%;
 	}
+
 	.gallery-div p {
 		position: relative;
 		text-align: center;
@@ -108,5 +101,4 @@
 			padding-right: 0rem;
 		}
 	}
-
 </style>
